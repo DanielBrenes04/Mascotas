@@ -6,6 +6,13 @@
       "FNacimiento": "2016-05-09",
       "genero": "M",
       "id": 1
+    },
+    {
+      "nombre": "Sara",
+      "raza": "Terrier",
+      "FNacimiento": "2023-01-31",
+      "genero": "F",
+      "id": 2
     }
   ]
 }
