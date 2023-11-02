@@ -1,0 +1,67 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Buscar por nombre"
+        [(ngModel)]="nombre"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="buscarNombre()"
+        >
+          Buscar
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Lista de Mascotas</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let mascota of mascotas; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActivarMascota(mascota, i)"
+      >
+        {{ mascota.nombre }}
+      </li>
+    </ul>
+
+    <button class="m-3 btn btn-sm btn-danger" (click)="eliminarTodasMascotas()">
+      Eliminar Todo
+    </button>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="mascotaActual">
+      <h4>Mascota</h4>
+      <div>
+        <label><strong>Nombre:</strong></label> {{ mascotaActual.nombre }}
+      </div>
+      <div>
+        <label><strong>Descripción:</strong></label>
+        {{ mascotaActual.raza }}
+      </div>
+      <div>
+        <label><strong>Precio:</strong></label>
+        {{ mascotaActual.FNacimiento }}
+      </div>
+      <div>
+        <label><strong>Cantidad:</strong></label>
+        {{ mascotaActual.genero }}
+      </div>
+
+      <a class="link-dark" routerLink="/mascotas/{{ mascotaActual.id }}">
+        Editar
+      </a>
+    </div>
+
+    <div *ngIf="!mascotaActual">
+      <br />
+      <p>Por favor seleccione una Mascota...</p>
+    </div>
+  </div>
+</div>

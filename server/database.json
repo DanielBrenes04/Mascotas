@@ -1,0 +1,11 @@
+{
+  "mascotas": [
+    {
+      "nombre": "Dixie",
+      "raza": "Beagle",
+      "FNacimiento": "2016-05-09",
+      "genero": "F",
+      "id": 1
+    }
+  ]
+}
